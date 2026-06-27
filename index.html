@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Reproductor de Música</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Música</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="player">
-    <h1>🎶 Mi Reproductor</h1>
+<div class="player">
 
-    <audio id="audio" controls></audio>
+<img src="images/portada.jpg" id="cover">
 
-    <div class="controls">
-      <button onclick="prevSong()">⏮</button>
-      <button onclick="playSong()">▶</button>
-      <button onclick="pauseSong()">⏸</button>
-      <button onclick="nextSong()">⏭</button>
-    </div>
+<h2 id="title">Canción 1</h2>
 
-    <ul id="playlist"></ul>
-  </div>
+<audio id="audio"></audio>
 
-  <script src="script.js"></script>
+<input type="range" id="progress" value="0">
+
+<div class="buttons">
+
+<button onclick="prevSong()">⏮</button>
+
+<button id="play">▶</button>
+
+<button onclick="nextSong()">⏭</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
