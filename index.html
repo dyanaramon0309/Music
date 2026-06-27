@@ -1,37 +1,199 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Música</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Mi Reproductor</title>
 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(-45deg,#ff9ed2,#ff7eb9,#ff5ca8,#ffb6e6);
+background-size:400% 400%;
+animation:fondo 10s ease infinite;
+}
+
+@keyframes fondo{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+#notas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.nota{
+position:absolute;
+bottom:-50px;
+color:white;
+opacity:.4;
+animation:subir linear forwards;
+}
+
+@keyframes subir{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+20%{
+opacity:.5;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.player{
+width:340px;
+padding:25px;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+z-index:10;
+}
+
+img{
+width:250px;
+height:250px;
+border-radius:20px;
+object-fit:cover;
+}
+
+h2{
+margin:20px 0;
+color:white;
+}
+
+button{
+width:65px;
+height:65px;
+border:none;
+border-radius:50%;
+font-size:24px;
+margin:10px;
+cursor:pointer;
+background:white;
+color:#ff4fa3;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+input{
+width:100%;
+margin-top:15px;
+accent-color:white;
+}
+</style>
+
+</head>
 <body>
+
+<div id="notas"></div>
 
 <div class="player">
 
-<img src="images/portada.jpg" id="cover">
+<img src="portada.jpg">
 
-<h2 id="title">Canción 1</h2>
+<h2>Mi Canción</h2>
 
-<audio id="audio"></audio>
+<audio id="audio" src="musica.mp3"></audio>
 
-<input type="range" id="progress" value="0">
+<button onclick="playPause()" id="play">▶</button>
 
-<div class="buttons">
-
-<button onclick="prevSong()">⏮</button>
-
-<button id="play">▶</button>
-
-<button onclick="nextSong()">⏭</button>
+<input type="range" id="barra" value="0">
 
 </div>
 
-</div>
+<script>
 
-<script src="script.js"></script>
+const audio=document.getElementById("audio");
+const play=document.getElementById("play");
+const barra=document.getElementById("barra");
+
+function playPause(){
+
+if(audio.paused){
+
+audio.play();
+play.innerHTML="⏸";
+
+}else{
+
+audio.pause();
+play.innerHTML="▶";
+
+}
+
+}
+
+audio.addEventListener("loadedmetadata",()=>{
+
+barra.max=audio.duration;
+
+});
+
+audio.addEventListener("timeupdate",()=>{
+
+barra.value=audio.currentTime;
+
+});
+
+barra.oninput=()=>{
+
+audio.currentTime=barra.value;
+
+};
+
+function crearNota(){
+
+const nota=document.createElement("div");
+
+nota.className="nota";
+
+const simbolos=["♪","♫","♬","♩"];
+
+nota.innerHTML=simbolos[Math.floor(Math.random()*simbolos.length)];
+
+nota.style.left=Math.random()*100+"%";
+
+nota.style.fontSize=(20+Math.random()*40)+"px";
+
+nota.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.getElementById("notas").appendChild(nota);
+
+setTimeout(()=>{
+
+nota.remove();
+
+},10000);
+
+}
+
+setInterval(crearNota,250);
+
+</script>
 
 </body>
 </html>
