@@ -215,9 +215,15 @@ color:#ff4fa3;
   
 <div class="player">
 
-<img src="Manchild—Sabrina Carpenter.webp">
+<img id="cover" src="Manchild—Sabrina Carpenter.webp">
 
-<h2>Manchild|Sabrina Carpenter</h2>
+<h2 id="titulo">
+Manchild
+</h2>
+
+<p id="artista">
+Sabrina Carpenter
+</p>
 
 <audio id="audio" src="Sabrina Carpenter - Manchild (Official Video).mp3"></audio>
 
@@ -230,7 +236,7 @@ color:#ff4fa3;
 
 <h3>♪ Letra</h3>
 
-<div class="lyrics-box">
+<div class="lyrics-box" id="lyrics">
 
 Oh boy
 You said your phone was broken
@@ -301,7 +307,35 @@ Hey men!
 
 </div>
 <script>
+// ===== PLAYLIST =====
 
+const canciones=[
+
+{
+titulo:"Manchild",
+artista:"Sabrina Carpenter",
+audio:"Sabrina Carpenter - Manchild (Official Video).mp3",
+imagen:"Manchild—Sabrina Carpenter.webp",
+tema:"rosa",
+letra:`
+Aquí pegaras la letra de manchild.
+`
+},
+
+{
+titulo:"Labios de Cereza",
+artista:"Tercer Elemento",
+audio:"Labios de Cereza.mp3",
+imagen:"labios.webp",
+tema:"rojo",
+letra:`
+Aquí pegarás la letra de Labios de Cereza.
+`
+}
+
+];
+
+let indiceActual=0;
 const audio=document.getElementById("audio");
 const play=document.getElementById("play");
 const barra=document.getElementById("barra");
