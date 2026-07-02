@@ -443,7 +443,19 @@ const nota=document.createElement("div");
 
 nota.className="nota";
 
-const simbolos=["♪","♫","♬","♩"];
+let simbolos=[];
+
+if(canciones[indiceActual].tema=="rosa"){
+
+simbolos=["♪","♫","♬","♩"];
+
+}
+
+if(canciones[indiceActual].tema=="rojo"){
+
+simbolos=["🍒","🤍🔥","🍒","🔥"];
+
+}
 
 nota.innerHTML=simbolos[Math.floor(Math.random()*simbolos.length)];
 
