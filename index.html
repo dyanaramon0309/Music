@@ -461,10 +461,25 @@ nota.innerHTML=simbolos[Math.floor(Math.random()*simbolos.length)];
 
 nota.style.left=Math.random()*100+"%";
 
+if(canciones[indiceActual].tema=="rosa"){
+
 nota.style.fontSize=(20+Math.random()*40)+"px";
+
+}
+
+if(canciones[indiceActual].tema=="rojo"){
+
+nota.style.fontSize=(30+Math.random()*30)+"px";
+
+}
 
 nota.style.animationDuration=(5+Math.random()*5)+"s";
 
+  if(canciones[indiceActual].tema=="rojo"){
+
+nota.style.opacity="0.8";
+
+}
 document.getElementById("notas").appendChild(nota);
 
 setTimeout(()=>{
