@@ -203,11 +203,11 @@ color:#ff4fa3;
 
 <h2>𝓜𝓲 𝓹𝓵𝓪𝔂𝓵𝓲𝓼𝓽</h2>
 
-<div class="song active">
+<div class="song active" onclick="cargarCancion(0)">
  ♡Manchild♡
 </div>
 
-<div class="song">
+<div class="song"onclick="cargarCancion(1)">
  ♡Labios de Cereza 2♡
 </div>
 
@@ -337,9 +337,29 @@ Aquí pegarás la letra de Labios de Cereza.
 
 let indiceActual=0;
 const audio=document.getElementById("audio");
+  const cover=document.getElementById("cover");
+const titulo=document.getElementById("titulo");
+const artista=document.getElementById("artista");
+const lyrics=document.getElementById("lyrics");
+  
 const play=document.getElementById("play");
 const barra=document.getElementById("barra");
 
+  function cargarCancion(indice){
+
+indiceActual=indice;
+
+cover.src=canciones[indice].imagen;
+
+titulo.innerHTML=canciones[indice].titulo;
+
+artista.innerHTML=canciones[indice].artista;
+
+audio.src=canciones[indice].audio;
+
+lyrics.innerHTML=canciones[indice].letra;
+
+}
 function playPause(){
 
 if(audio.paused){
@@ -399,7 +419,7 @@ nota.remove();
 },10000);
 
 }
-
+cargarCancion(0);
 setInterval(crearNota,250);
 
 </script>
