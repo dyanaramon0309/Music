@@ -142,8 +142,17 @@ cursor:pointer;
 background:white;
 color:#ff4fa3;
 transition:.3s;
+ 
 }
+.buttons{
 
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+margin-top:15px;
+
+}
 button:hover{
 transform:scale(1.1);
 }
@@ -261,7 +270,21 @@ Sabrina Carpenter
 
 <audio id="audio" src="Sabrina Carpenter - Manchild (Official Video).mp3"></audio>
 
-<button onclick="playPause()" id="play">▶</button>
+<div class="buttons">
+
+<button onclick="anterior()">
+⏮️
+</button>
+
+<button onclick="playPause()" id="play">
+▶
+</button>
+
+<button onclick="siguiente()">
+⏭️
+</button>
+
+</div>
 
 <input type="range" id="barra" value="0">
 
@@ -420,7 +443,12 @@ if(canciones[indice].tema=="rosa"){
 
 document.body.style.background=
 "linear-gradient(-45deg,#ff9ed2,#ff7eb9,#ff5ca8,#ffb6e6)";
+  
+audio.pause();
 
+play.innerHTML="▶";
+
+cover.classList.remove("girando");
 }
 
 if(canciones[indice].tema=="rojo"){
@@ -429,6 +457,33 @@ document.body.style.background=
 "linear-gradient(-45deg,#5a0000,#8b0000,#b30000,#ff2d55)";
 
 }
+}
+  function siguiente(){
+
+indiceActual++;
+
+if(indiceActual>=canciones.length){
+
+indiceActual=0;
+
+}
+
+cargarCancion(indiceActual);
+
+}
+
+function anterior(){
+
+indiceActual--;
+
+if(indiceActual<0){
+
+indiceActual=canciones.length-1;
+
+}
+
+cargarCancion(indiceActual);
+
 }
 function playPause(){
 
@@ -519,6 +574,11 @@ nota.remove();
 
 }
 cargarCancion(0);
+  audio.addEventListener("ended",()=>{
+
+siguiente();
+
+});
 setInterval(crearNota,250);
 
 </script>
