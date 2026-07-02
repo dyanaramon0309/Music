@@ -140,13 +140,79 @@ width:100%;
 margin-top:15px;
 accent-color:white;
 }
+  .app{
+display:flex;
+gap:25px;
+align-items:flex-start;
+}
+
+.playlist{
+
+width:220px;
+background:rgba(255,255,255,.20);
+backdrop-filter:blur(15px);
+padding:20px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.playlist h2{
+
+color:white;
+margin-bottom:20px;
+text-align:center;
+
+}
+
+.song{
+
+padding:15px;
+margin-bottom:10px;
+background:rgba(255,255,255,.15);
+border-radius:15px;
+cursor:pointer;
+color:white;
+transition:.3s;
+
+}
+
+.song:hover{
+
+background:white;
+color:#ff4fa3;
+transform:translateX(8px);
+
+}
+
+.active{
+
+background:white;
+color:#ff4fa3;
+
+}
 </style>
 
 </head>
 <body>
 
 <div id="notas"></div>
+  <div class="app">
 
+  <div class="playlist">
+
+<h2>🎵 Mi Playlist</h2>
+
+<div class="song active">
+🩷 Manchild
+</div>
+
+<div class="song">
+🍒 Labios de Cereza 2
+</div>
+
+</div>
+  
 <div class="player">
 
 <img src="Manchild—Sabrina Carpenter.webp">
