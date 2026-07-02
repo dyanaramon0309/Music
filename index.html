@@ -12,11 +12,44 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial, sans-serif;
 }
+  .lyrics{
+width:340px;
+margin-left:20px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(15px);
+padding:20px;
+border-radius:25px;
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+color:white;
+}
+
+.lyrics h3{
+margin-bottom:15px;
+text-align:center;
+}
+
+.lyrics-box{
+height:400px;
+overflow-y:auto;
+padding-right:10px;
+line-height:1.9;
+font-size:16px;
+}
+
+.lyrics-box::-webkit-scrollbar{
+width:8px;
+}
+
+.lyrics-box::-webkit-scrollbar-thumb{
+background:white;
+border-radius:10px;
+}
 
 body{
 display:flex;
 justify-content:center;
 align-items:center;
+gap:30px;
 height:100vh;
 overflow:hidden;
 background:linear-gradient(-45deg,#ff9ed2,#ff7eb9,#ff5ca8,#ffb6e6);
@@ -127,7 +160,80 @@ accent-color:white;
 <input type="range" id="barra" value="0">
 
 </div>
+<div class="lyrics">
 
+<h3>♪ Letra</h3>
+
+<div class="lyrics-box">
+
+Oh boy
+You said your phone was broken
+Just forgot to charge it
+Whole outfit you're wearing
+God I hope it's ironic
+Did you just say you're finished?
+Didn't know we started
+It's all just so familiar
+Baby, what do you call it?
+Stupid
+Or is it
+Slow?
+Maybe it's
+Useless?
+But there's a cuter word for it
+I know
+Manchild
+Why you always come a running to me?
+Fuck my life
+Won't you let an innocent woman be?
+Never heard of self care
+Half your brain just ain't there
+Manchild
+Why you always come a running
+Taking all my loving from me?
+Why so sexy
+If so dumb?
+And how survive the earth so long?
+If I'm not there it won't get done
+I choose to blame your mom
+Manchild
+Why you always come a running to me?
+Fuck my life
+Won't you let an innocent woman be?
+Never heard of self care
+Half your brain just ain't there
+Manchild
+Why you always come a running
+Taking all my loving from me?
+Oh I like my boys playing hard to get
+And I like my men all incompetent
+And I swear they choose me
+I'm not choosing them
+Amen
+Hey men!
+Oh, I like my boys playing hard to get
+And I like my men all incompetent
+And I swear they choose me
+I'm not choosing them
+Amen
+(Amen)
+Hey men!
+(Hey men!)
+Manchild
+Why you always come a running to me?
+(always come a running to me)
+Fuck my life
+Won't you let an innocent woman be?
+Oh, I like my boys playing hard to get
+And I like my men all incompetent
+And I swear they choose me
+I'm not choosing them
+Amen
+Hey men!
+
+</div>
+
+</div>
 <script>
 
 const audio=document.getElementById("audio");
