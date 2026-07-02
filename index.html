@@ -234,6 +234,15 @@ transform:rotate(360deg);
 }
 
 }
+  .tiempo{
+
+display:flex;
+justify-content:space-between;
+margin-top:8px;
+color:white;
+font-size:14px;
+
+}
 </style>
 
 </head>
@@ -287,7 +296,12 @@ Sabrina Carpenter
 </div>
 
 <input type="range" id="barra" value="0">
+<div class="tiempo">
 
+<span id="actual">0:00</span>
+
+<span id="duracion">0:00</span>
+  
 </div>
 <div class="lyrics">
 
@@ -424,7 +438,24 @@ const lyrics=document.getElementById("lyrics");
   
 const play=document.getElementById("play");
 const barra=document.getElementById("barra");
+const actual=document.getElementById("actual");
+const duracion=document.getElementById("duracion");
+ 
+  function formatoTiempo(segundos){
 
+let minutos=Math.floor(segundos/60);
+
+let secs=Math.floor(segundos%60);
+
+if(secs<10){
+
+secs="0"+secs;
+
+}
+
+return minutos+":"+secs;
+
+}
   function cargarCancion(indice){
 
 indiceActual=indice;
@@ -507,11 +538,15 @@ audio.addEventListener("loadedmetadata",()=>{
 
 barra.max=audio.duration;
 
+duracion.innerHTML=formatoTiempo(audio.duration);
+
 });
 
 audio.addEventListener("timeupdate",()=>{
 
 barra.value=audio.currentTime;
+
+actual.innerHTML=formatoTiempo(audio.currentTime);
 
 });
 
