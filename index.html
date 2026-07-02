@@ -14,13 +14,23 @@ font-family:Arial, sans-serif;
 }
   .lyrics{
 width:340px;
-margin-left:20px;
-background:rgba(255,255,255,.18);
+height:620px;
+
+background:rgba(255, 255, 255,.18);
+    
 backdrop-filter:blur(15px);
+    
 padding:20px;
+    
 border-radius:25px;
-box-shadow:0 10px 40px rgba(0,0,0,.25);
+
+box-shadow:0 10px 40px
+  
+rgba(0,0,0,.25);
+    
 color:white;
+    
+flex_shrink:0;
 }
 
 .lyrics h3{
@@ -104,6 +114,7 @@ opacity:0;
 
 .player{
 width:340px;
+flex-shrink:0;
 padding:25px;
 background:rgba(255,255,255,.2);
 backdrop-filter:blur(15px);
@@ -164,8 +175,13 @@ accent-color:white;
 }
   .app{
 display:flex;
-gap:25px;
+justify-content:center;
 align-items:flex-start;
+gap:30px;
+
+flex-wrap:nowr ap;
+
+width:100%;
 }
 
 .playlist{
