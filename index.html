@@ -204,6 +204,27 @@ background:white;
 color:#ff4fa3;
 
 }
+  .girando{
+
+animation:girar 8s linear infinite;
+
+}
+
+@keyframes girar{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
 </style>
 
 </head>
@@ -414,11 +435,13 @@ function playPause(){
 if(audio.paused){
 
 audio.play();
+  cover.classList.add("girando");
 play.innerHTML="⏸";
 
 }else{
 
 audio.pause();
+  cover.classList.remove("girando");
 play.innerHTML="▶";
 
 }
