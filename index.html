@@ -268,7 +268,7 @@ font-size:14px;
 <div id="notas"></div>
   <div class="app">
 
-  <div class="playlist">
+  <div class="playlist" id="playlist">
 
 <h2>𝓜𝓲 𝓹𝓵𝓪𝔂𝓵𝓲𝓼𝓽</h2>
 
@@ -282,7 +282,7 @@ font-size:14px;
 
 </div>
   
-<div class="player">
+<div class="player" id="player">
 
 <img id="cover" src="Manchild—Sabrina Carpenter.webp">
 
@@ -322,7 +322,7 @@ Sabrina Carpenter
 
 </div>
     
-<div class="lyrics">
+<div class="lyrics" id="lyricsBox">
 
 <h3>♪ Letra</h3>
 <div class="lyrics-box" id="lyrics">
@@ -455,6 +455,9 @@ const audio=document.getElementById("audio");
 const titulo=document.getElementById("titulo");
 const artista=document.getElementById("artista");
 const lyrics=document.getElementById("lyrics");
+const player=document.getElementById("player");
+const playlist=document.getElementById("playlist");
+const lyricsBox=document.getElementById("lyricsBox");
   
 const play=document.getElementById("play");
 const barra=document.getElementById("barra");
@@ -495,6 +498,10 @@ if(canciones[indice].tema=="rosa"){
 document.body.style.background=
 "linear-gradient(-45deg,#ff9ed2,#ff7eb9,#ff5ca8,#ffb6e6)";
   
+player .style .bakground="rgba(255, 255, 255, .20)
+playlist .style .bakground="rgba(255, 255, 255, .20)
+lyricsBox .style .bakground="rgba(255, 255, 255, .18)
+  
 audio.pause();
 
 play.innerHTML="▶";
@@ -506,6 +513,10 @@ if(canciones[indice].tema=="rojo"){
 
 document.body.style.background=
 "linear-gradient(-45deg,#5a0000,#8b0000,#b30000,#ff2d55)";
+
+player .style .bakground="rgba(120, 0, 0, .35)
+playlist .style .bakground="rgba(120, 0, 0, .35)
+lyricsBox .style .bakground="rgba(120, 0, 0, .35)
 
 }
 }
