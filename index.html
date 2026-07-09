@@ -489,7 +489,7 @@ titulo.innerHTML=canciones[indice].titulo;
 
 artista.innerHTML=canciones[indice].artista;
 
-audio.src=canciones[indice].audio;
+audio.src=canciones[indice].audio;audio.load();
 
 lyrics.innerHTML=canciones[indice].letra;
     
@@ -498,9 +498,9 @@ if(canciones[indice].tema=="rosa"){
 document.body.style.background=
 "linear-gradient(-45deg,#ff9ed2,#ff7eb9,#ff5ca8,#ffb6e6)";
   
-player .style .bakground="rgba(255, 255, 255, .20)
-playlist .style .bakground="rgba(255, 255, 255, .20)
-lyricsBox .style .bakground="rgba(255, 255, 255, .18)
+player .style .background="rgba(255, 255, 255, .20)";
+playlist .style .background="rgba(255, 255, 255, .20)";
+lyricsBox .style .background="rgba(255, 255, 255, .18)";
   
 audio.pause();
 
@@ -514,9 +514,9 @@ if(canciones[indice].tema=="rojo"){
 document.body.style.background=
 "linear-gradient(-45deg,#5a0000,#8b0000,#b30000,#ff2d55)";
 
-player .style .bakground="rgba(120, 0, 0, .35)
-playlist .style .bakground="rgba(120, 0, 0, .35)
-lyricsBox .style .bakground="rgba(120, 0, 0, .35)
+player .style .background="rgba(120, 0, 0, .35)";
+playlist .style .background="rgba(120, 0, 0, .35)";
+lyricsBox .style .background="rgba(120, 0, 0, .35)";
 
 }
 }
