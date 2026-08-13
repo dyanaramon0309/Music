@@ -586,6 +586,23 @@ playlist.style.background="rgba(120, 0, 0, .35)";
 lyricsBox.style.background="rgba(120, 0, 0, .35)";
 
 }
+
+if(canciones[indice].tema=="azul"){
+
+document.body.style.background=
+"linear-gradient(-45deg,#87CEEB,#5BC0EB,#B8E7FF,#D9F5FF)";
+
+player.style.background="rgba(80, 180, 230, .30)";
+playlist.style.background="rgba(80, 180, 230, .30)";
+lyricsBox.style.background="rgba(80, 180, 230, .30)";
+
+audio.pause();
+
+play.innerHTML="▶";
+
+cover.classList.remove("girando");
+
+}
 }
   function siguiente(){
 
@@ -674,6 +691,12 @@ simbolos=["🍒","🔥","🍒","🔥"];
 
 }
 
+if(canciones[indiceActual].tema=="azul"){
+
+simbolos=["☁️","✨","💫"];
+
+}
+
 nota.innerHTML=simbolos[Math.floor(Math.random()*simbolos.length)];
 
 nota.style.left=Math.random()*100+"%";
@@ -687,6 +710,12 @@ nota.style.fontSize=(20+Math.random()*40)+"px";
 if(canciones[indiceActual].tema=="rojo"){
 
 nota.style.fontSize=(30+Math.random()*30)+"px";
+
+}
+
+if(canciones[indiceActual].tema=="azul"){
+
+nota.style.fontSize=(20+Math.random()*35)+"px";
 
 }
 
