@@ -689,12 +689,22 @@ cover.classList.remove("girando");
 
 }
 
-if(canciones[indiceActual].tema=="nostalgia"){
+if(canciones[indice].tema=="nostalgia"){
 
-nota.style.fontSize=(20+Math.random()*30)+"px";
+document.body.style.background=
+"linear-gradient(-45deg,#8B5E5E,#A66A6A,#C58B82,#E6B8A2)";
 
-nota.style.opacity="0.7";
+player.style.background="rgba(110, 60, 60, .35)";
+playlist.style.background="rgba(110, 60, 60, .35)";
+lyricsBox.style.background="rgba(110, 60, 60, .35)";
 
+audio.pause();
+
+play.innerHTML="▶";
+
+cover.classList.remove("girando");
+
+}
 }
 
 }
