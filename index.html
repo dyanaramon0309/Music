@@ -688,6 +688,15 @@ play.innerHTML="▶";
 cover.classList.remove("girando");
 
 }
+
+if(canciones[indiceActual].tema=="nostalgia"){
+
+nota.style.fontSize=(20+Math.random()*30)+"px";
+
+nota.style.opacity="0.7";
+
+}
+
 }
   function siguiente(){
 
@@ -782,6 +791,12 @@ simbolos=["☁️","✨","💫"];
 
 }
 
+if(canciones[indiceActual].tema=="nostalgia"){
+
+simbolos=["♡","♥","✦","⋆","❀"];
+
+}
+
 nota.innerHTML=simbolos[Math.floor(Math.random()*simbolos.length)];
 
 nota.style.left=Math.random()*100+"%";
@@ -801,6 +816,14 @@ nota.style.fontSize=(30+Math.random()*30)+"px";
 if(canciones[indiceActual].tema=="azul"){
 
 nota.style.fontSize=(20+Math.random()*35)+"px";
+
+}
+
+if(canciones[indiceActual].tema=="nostalgia"){
+
+nota.style.fontSize=(20+Math.random()*30)+"px";
+
+nota.style.opacity="0.7";
 
 }
 
